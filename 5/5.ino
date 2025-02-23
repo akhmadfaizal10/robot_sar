@@ -9,7 +9,7 @@ step = (sudut / 300) * 1023
 #define DirectionPin  5          // Pin untuk arah komunikasi
 #define BaudRate      1000000ul  // Baud rate komunikasi
 #define servoID_14    2          // ID Servo 14
-
+int detik = 50;
 // Fungsi untuk konversi sudut ke nilai step
 int sudut(float angle) {
   return (int)((angle / 300.0) * 1023.0);
@@ -59,12 +59,22 @@ void loop() {
 //   //tibia_naik8_10_12();
 // delay(5000);
 // backward();
-muter();
+
 //coxa_muter8_10_12();
 // delay(500);
-
 //  coxa_muter7_9_11();
-
+for (int i=0; i<10;i++){
+  muter();
+}
+delay(2000);
+for (int i=0; i<10;i++){
+  forward();
+}
+delay(2000);
+for (int i=0; i<10;i++){
+  backward();
+}
+delay(2000);
 }
 
 
